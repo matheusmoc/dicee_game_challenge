@@ -19,12 +19,16 @@
   
   var randomNumber2 = Math.floor(Math.random() * 6) + 1; // 1 - 6
 
-  var randomDicee2 = "dice" + randomNumber2 + ".png"; //dice1.png - dice6.png
+  var randomImageSource2 = "images/dice" + randomNumber2 + ".png"; //imagems/dice1.png - images/dice6.png
 
-  var randomImageSource2 = "images/" + randomDicee2; //imagems/dice1.png - images/dice6.png
-
-  var image2 = document.querySelectorAll("img")[1];   //duas imagens ao invés de uma
-  image2.setAttribute('src', randomImageSource2)
+ document.querySelectorAll("img")[1].setAttribute('src', randomImageSource2);
 
 
-                                                
+if(randomNumber1 < randomNumber2){
+  var msg = "PLAYER 2 WINS!!!";
+ document.querySelector("p").innerHTML = msg;         
+}else if(randomNumber1 > randomNumber2) {
+  document.querySelector("p").innerHTML = "PLAYER 1 WINS!!!"
+}else{
+  document.querySelector("p").innerHTML = "DRAWN!!!"
+}                    
